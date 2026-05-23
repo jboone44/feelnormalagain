@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feel Normal Again | Crohn's & Colitis Healing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFBF8;
+    --deep: #1C1814;
+    --muted: #6B6560;
+    --accent: #8B4A2F;
+    --accent-light: #F0E8E2;
+    --accent-mid: #C4846A;
+    --border: rgba(28, 24, 20, 0.12);
+    --border-strong: rgba(28, 24, 20, 0.22);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--deep);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--deep);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-mid);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.7; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent-mid);
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--deep);
+    color: var(--warm-white);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--deep);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.5px solid var(--border-strong);
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%;
+    height: 0.5px;
+    background: var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* STATS */
+  .stats {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+
+  /* STORY */
+  .story {
+    background: var(--cream);
+    padding: 5rem 2rem;
+  }
+
+  .story-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .story-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .story-body {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  .story-body p + p { margin-top: 1rem; }
+
+  .story-credentials {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .credential-item {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .credential-item::before {
+    content: '—';
+    color: var(--accent-mid);
+    flex-shrink: 0;
+  }
+
+  .story-quote {
+    background: var(--warm-white);
+    border-left: 2px solid var(--accent);
+    padding: 1.75rem;
+    margin-top: 1rem;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--deep);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .quote-attr {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* PATHS */
+  .paths {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .paths-header {
+    margin-bottom: 3rem;
+  }
+
+  .paths-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .paths-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--deep);
+  }
+
+  .path-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 0.5px solid var(--border-strong);
+  }
+
+  .path-card {
+    padding: 2rem 2rem 2rem 2rem;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    transition: background 0.2s;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .path-card:last-child { border-bottom: none; }
+  .path-card:hover { background: var(--cream); }
+
+  .path-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--accent-mid);
+    line-height: 1;
+    padding-top: 0.1rem;
+  }
+
+  .path-content { }
+
+  .path-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .path-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .path-badge {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 0.15rem;
+  }
+
+  .badge-free {
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .badge-founding {
+    background: var(--deep);
+    color: var(--warm-white);
+  }
+
+  /* CLOSE */
+  .close-section {
+    background: var(--deep);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .close-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 500;
+    color: var(--warm-white);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .close-sub {
+    font-size: 0.9rem;
+    color: rgba(253, 251, 248, 0.55);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .btn-light {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    background: var(--warm-white);
+    color: var(--deep);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-light:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 0.5px solid var(--border);
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero-headline { animation: fadeUp 0.6s ease both; animation-delay: 0.25s; }
+  .hero-sub { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+  .hero-actions { animation: fadeUp 0.6s ease both; animation-delay: 0.55s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .path-card { grid-template-columns: 2rem 1fr; }
+    .path-badge { display: none; }
+    nav { padding: 1rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Feel Normal Again</a>
+  <a href="#YOUR-CALENDLY-LINK" class="nav-cta">Book a free call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">For Crohn's & Colitis</p>
+  <h1 class="hero-headline">Told surgery is<br>your <em>only option?</em><br>I was too.</h1>
+  <p class="hero-sub">For people with Crohn's or colitis who are facing surgery — for the first time or again — and aren't ready to accept that as the only path forward.</p>
+  <div class="hero-actions">
+    <a href="#paths" class="btn-primary">Find your starting point</a>
+    <a href="#YOUR-CALENDLY-LINK" class="btn-ghost">Book a free call</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat-item">
+    <span class="stat-number">20+</span>
+    <span class="stat-label">Surgeries before I found another way</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">$4.2M</span>
+    <span class="stat-label">In healthcare bills following medicine's plan</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">$80K</span>
+    <span class="stat-label">Out of pocket — and they still wanted more</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div>
+      <p class="story-label">My story</p>
+      <h2 class="story-headline">I chose differently. Here's what I found.</h2>
+      <div class="story-body">
+        <p>Twenty surgeries. $4.2 million in healthcare bills. $80,000 out of pocket. I did everything medicine asked. And they still told me I needed more.</p>
+        <p>Then I found a completely different approach — one that addressed what medicine never once looked at. I canceled the surgery. That was the beginning of actually healing, not just managing.</p>
+        <p>What I learned is what I now help others find.</p>
+      </div>
+      <div class="story-credentials">
+        <div class="credential-item">Certified Holistic Lifestyle Coach, Chek System</div>
+        <div class="credential-item">Certified Neurosomatic Therapist</div>
+        <div class="credential-item">President, Ostomy Association of Austin — members called his presentation the best they'd ever attended</div>
+      </div>
+    </div>
+    <div>
+      <div class="story-quote">
+        <p class="quote-text">"I felt like a weight had been lifted off my shoulders. I was able to work through things I'd never talked to anyone about in my life. I'm sleeping better — consecutive hours for the first time in a long time. I feel better. I've lost weight."</p>
+        <p class="quote-attr">— David, Crohn's patient, Austin TX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHS -->
+<section class="paths" id="paths">
+  <div class="paths-header">
+    <p class="paths-label">Where to start</p>
+    <h2 class="paths-headline">Choose your path forward</h2>
+  </div>
+
+  <div class="path-cards">
+    <a href="#YOUR-KIT-FORM-LINK" class="path-card">
+      <span class="path-number">01</span>
+      <div class="path-content">
+        <p class="path-title">Start with the free video series</p>
+        <p class="path-desc">Three short videos covering movement, food, and the complete picture of what's actually driving your disease — and why doing one thing right is never enough. Practical. No fluff.</p>
+      </div>
+      <span class="path-badge badge-free">Free</span>
+    </a>
+
+    <a href="#YOUR-CALENDLY-LINK" class="path-card">
+      <span class="path-number">02</span>
+      <div class="path-content">
+        <p class="path-title">Book a free 20-minute clarity call</p>
+        <p class="path-desc">No pitch. A real conversation about your specific situation and one concrete thing you can do right now. You'll leave with more clarity than most doctor appointments have ever given you.</p>
+      </div>
+      <span class="path-badge badge-free">Free</span>
+    </a>
+
+    <a href="#YOUR-APPLICATION-LINK" class="path-card">
+      <span class="path-number">03</span>
+      <div class="path-content">
+        <p class="path-title">Apply to work together directly</p>
+        <p class="path-desc">A five-month one-on-one program built entirely around your individual formula. Not a generic protocol. Covering movement, food, emotional work, and everything medicine left out. Founding client spots available now at a significantly reduced rate.</p>
+      </div>
+      <span class="path-badge badge-founding">Founding Rate</span>
+    </a>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section">
+  <div class="close-inner">
+    <h2 class="close-headline">You've already given medicine everything it asked for.</h2>
+    <p class="close-sub">Before you give more — let's talk. The call is free, there's no pitch, and you'll leave with something useful regardless.</p>
+    <a href="#YOUR-CALENDLY-LINK" class="btn-light">Book your free 20-minute call</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Feel Normal Again &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; <a href="mailto:YOUR@EMAIL.COM" style="color: inherit;">YOUR@EMAIL.COM</a></p>
+</footer>
+
+</body>
+</html>
